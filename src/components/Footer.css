@@ -1,0 +1,48 @@
+/* CSS for the body and HTML */
+html, body {
+    height: 100%; /* Ensure the body takes the full height of the viewport */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Use flexbox to arrange children */
+    flex-direction: column; /* Stack children vertically */
+}
+
+
+.footer {
+    background-color: #ddd9c5; /* Match your theme color */
+    text-align: center; /* Center the text */
+    padding: 12px 0; /* Add some vertical padding */
+    position: relative; /* Position for layout control */
+    bottom: 0; /* Stick to the bottom */
+    width: 100%; /* Full width */
+    margin-top: auto; /* Push footer to the bottom of the page */
+}
+
+.footer-text {
+    color: rgba(0, 0, 0, 0.829); /* Text color */
+    font-family: 'Poppins', sans-serif; /* Font family */
+    margin: 0; /* Remove default margin */
+    font-size: 0.8vw; /* Default font size */
+    transition: font-size 0.3s ease; /* Smooth transition for resizing */
+    font-weight: bold;
+}
+
+/* Your responsive styles */
+@media (max-width: 768px) {
+    .footer-text {
+        font-size: 2.3vw; /* Increase font size on smaller screens */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1198px) {
+    .footer-text {
+        font-size: 1.5vw; /* Further increase on even smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-text {
+        font-size: 2.5vw; /* Further increase on even smaller screens */
+    }
+}
+
+  

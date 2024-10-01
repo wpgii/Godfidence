@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Sacramento&display=swap');
+
+body {
+    background-color: #f8f4e3; /* Creamy vanilla background */
+    margin: 0;
+}
+
+.hero-section {
+    position: relative; /* Position for the overlay */
+    background-image: url('./src/assets/hands1.jpg'); /* Replace with your image path */
+    background-size: cover; /* Cover the entire section */
+    background-position: center; /* Center the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1; /* Place behind the text */
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px; /* Adjust height for how large you want the shadow */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)); /* Fade shadow */
+    z-index: 1; /* This will create the shadow effect over the background */
+    pointer-events: none; /* Prevent interaction with this pseudo-element */
+}
+
+.hero-content {
+    position: relative; /* Keep text above the overlay */
+    z-index: 2; /* Make sure text is on top */
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items */
+    text-align: center; /* Center text */
+}
+
+.headline {
+    font-family: 'Poppins', sans-serif; /* Softer font for the headline */
+    font-size: 10vw; /* Increased size */
+    width: 100%; /* Take full width */
+    display: inline-block; /* Allow width adjustment */
+    letter-spacing: 0.12em; /* Increase spacing between letters */
+    margin: 0; /* Reset margin to avoid extra space */
+    color: hsla(0, 0%, 100%, 0.322); /* Use a defined color */
+    cursor: default; /* Default cursor */
+}
+
+.subheading {
+    font-family: 'Poppins', sans-serif; /* Font style */
+    font-size: 1.2vw; /* Use viewport width for scaling */
+    text-align: center;
+    margin: 0; /* Reset margin */
+}
+
+.definition {
+    font-family: 'Poppins', sans-serif; /* Font style */
+    font-size: 1vw; /* Responsive size */
+    text-align: center;
+    margin: 0; /* Reset margin */
+}
+
+.black {
+    color: rgba(245, 245, 245, 0.719); /* Adjust color */
+    cursor: default; /* Default cursor */
+    font-family: 'Poppins', sans-serif; /* Font style */
+    font-size: 2.2em; /* Adjust size as needed */
+}
+
+.deep-red {
+    color: rgb(173, 0, 0); /* Adjust color */
+    cursor: default; /* Default cursor */
+    font-family: 'Poppins', sans-serif; /* Font style */
+}
+
+.definition {
+    font-weight: 600; /* Adjust font weight */
+    width: 100%; /* Take full width */
+    display: inline-block; /* Allow width adjustment */
+    text-align: center; /* Center the text */
+    margin-top: 25px; /* Add space above */
+    line-height: 1.5; /* Improve readability */
+    word-spacing: 0.2em; /* Add space between words */
+    letter-spacing: 0.1em; /* Add space between letters */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.pushed-down {
+    transform: translateY(170px); /* Adjust the value as needed */
+    transition: transform 0.3s ease; /* Smooth transition for transform */
+}
+
+.subheading,
+.definition {
+    transition: transform 0.3s ease; /* Smooth transition for both subheading and definition */
+}
+
+/* Responsive styles for various breakpoints */
+@media (min-width: 769px) and (max-width: 1198px) {
+    .headline {
+        font-size: 10vw; /* Smaller headline */
+        margin: 0; /* Reset margin */
+    }
+
+    .subheading {
+        font-size: 1.5vw; /* Shrink subheading */
+        margin: 0; /* Reset margin */
+    }
+
+    .definition {
+        font-size: 3vw; /* Adjust paragraph size */
+    }
+}
+
+@media (max-width: 768px) {
+    .headline {
+        font-size: 11vw; /* Smaller on mobile */
+        margin: 0; /* Reset margin */
+    }
+
+    .subheading {
+        font-size: 2.2vw !important; /* Enforce size for small screens */
+        margin: 0; /* Reset margin */
+    }
+
+    .definition {
+        font-size: 3.7vw; /* Adjust definition size */
+    }
+}
+
+
+  

@@ -1,0 +1,196 @@
+/* General Navbar Styling */
+.navbar {
+    position: absolute; /* Positioning navbar */
+    top: 10px; /* Space from top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Center alignment */
+    width: 90%; /* Responsive width */
+    background-color: #ddd9c5; /* Match hero section */
+    padding: 15px 30px; /* Space around content */
+    display: flex; /* Flex layout for items */
+    justify-content: space-between; /* Space between elements */
+    align-items: center; /* Center items vertically */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* Floating effect */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+/* Navbar Logo and Title */
+.navbar-logo {
+    display: flex; /* Flex layout */
+    align-items: center; /* Center items */
+    margin: 0 auto; /* Center on smaller screens */
+    cursor: pointer; /* Pointer cursor for interaction */
+}
+
+/* Logo Styling */
+.navbar-logo img {
+    height: 60px; /* Fixed height for logo */
+    width: auto; /* Maintain aspect ratio */
+    margin-right: 15px; /* Space between logo and title */
+}
+
+/* Title Styling */
+.navbar-title {
+    font-size: 1.5em; /* Font size for title */
+    text-align: center; /* Center alignment */
+}
+
+/* Navbar Links Styling */
+.navbar-links {
+    display: flex; /* Flex layout for links */
+    align-items: center; /* Center items */
+    justify-content: flex-end; /* Push links to right */
+    flex-grow: 1; /* Allow to take remaining space */
+}
+
+.navbar-links a {
+    color: white; /* Link color */
+    text-decoration: none; /* Remove underline */
+    font-size: 1.2em; /* Font size for links */
+    font-family: 'Poppins', sans-serif; /* Font style */
+    margin-left: 20px; /* Space between links */
+    transition: color 0.3s ease-in-out; /* Smooth color change */
+    position: relative; /* For hover effect */
+}
+
+/* Hover Effect for Links */
+.navbar-links a::after {
+    content: ''; /* After pseudo-element */
+    position: absolute; /* Positioning */
+    width: 100%; /* Full width */
+    height: 2px; /* Height of underline */
+    background-color: navy; /* Underline color */
+    bottom: -4px; /* Position under text */
+    left: 0; /* Align to left */
+    transform: scaleX(0); /* Initially hidden */
+    transform-origin: left; /* Origin for scaling */
+    transition: transform 0.3s ease-in-out; /* Smooth transition */
+}
+
+.navbar-links a:hover {
+    color: navy; /* Change link color on hover */
+}
+
+/* Button Styling */
+.button {
+    position: relative; /* Positioning for hover effect */
+    color: whitesmoke; /* Initial text color */
+    background-color: navy; /* Initial background */
+    padding: 10px 20px; /* Space inside button */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-family: 'Poppins', sans-serif; /* Font style */
+    font-size: 1.2em; /* Font size */
+    cursor: pointer; /* Pointer cursor */
+    text-decoration: none; /* Remove underline */
+    transition: color 0.3s ease, background-color 0.6s ease; /* Smooth transitions */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Initial shadow */
+    overflow: hidden; /* Hide overflow */
+    flex-shrink: 0; /* Prevent shrinking */
+    max-width: 100%; /* Responsive */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+/* Button Hover Effects */
+.button::before {
+    content: ''; /* Background for hover */
+    position: absolute; /* Positioning */
+    height: 100%; /* Full height */
+    width: 100%; /* Full width */
+    background: white; /* Background color for hover */
+    left: -100%; /* Start off-screen */
+    top: 0; /* Align to top */
+    transition: left 0.3s ease; /* Smooth transition */
+    z-index: -1; /* Behind text */
+}
+
+.button:hover::before {
+    left: 0; /* Slide in on hover */
+}
+
+.button:hover {
+    color: white; /* Change text color on hover */
+    background-color: white; /* Change background color */
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Increase shadow */
+}
+
+/* Active State for Button */
+.button:active {
+    transform: translateY(1px); /* Push down when clicked */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Reduce shadow */
+}
+
+/* Hamburger Menu Styling */
+.hamburger-menu {
+    display: none; /* Hidden on desktop */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.hamburger-menu div {
+    width: 30px; /* Width of hamburger bars */
+    height: 3px; /* Height of hamburger bars */
+    background-color: white; /* Bar color */
+    margin: 6px 0; /* Space between bars */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Mobile Navbar */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none; /* Hide links by default */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger menu */
+    }
+
+    .navbar-links.open {
+        display: flex; /* Show links when open */
+        flex-direction: column; /* Stack links */
+        position: absolute; /* Absolute positioning */
+        right: 0; /* Align to right */
+        top: 70px; /* Position below navbar */
+        background-color: #ddd9c5; /* Background color */
+        width: 100%; /* Full width */
+        padding: 10px 0; /* Space inside */
+        border-radius: 0 0 15px 15px; /* Rounded corners */
+        box-shadow: 0 4px 15px -4px rgba(0, 0, 0, 0.25); /* Shadow effect */
+    }
+
+    .navbar-title {
+        text-align: center; /* Center title */
+        margin-left: 27px; /* Margin for centering */
+    }
+
+    .navbar-logo {
+        margin: 0 auto 15px; /* Center logo with space below */
+        text-align: center; /* Center alignment */
+    }
+
+    .navbar-links a {
+        padding: 10px 0; /* Padding for links */
+        text-align: center; /* Center text for links */
+        color: white; /* Adjust text color if needed */
+    }
+
+    .button {
+        width: 100%; /* Full width for button */
+        max-width: 400px; /* Optional max width */
+    }
+}
+
+/* Adjust button size before navbar becomes a hamburger menu */
+@media (max-width: 900px) and (min-width: 769px) {
+    .button {
+        padding: 6px 10px; /* Smaller padding */
+        font-size: 0.85vw; /* Smaller text size */
+    }
+
+    .navbar-links a {
+        font-size: 0.9em; /* Smaller link size */
+        padding: 8px; /* Adjust padding */
+    }
+}
+

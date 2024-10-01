@@ -1,0 +1,137 @@
+/* Why Us Section */
+.why-us-section {
+    position: relative;
+    background-color: rgb(243, 224, 200);
+    padding: 80px 20px;
+    overflow: hidden; /* This may be necessary for the glow effect */
+}
+
+/* Cards Container */
+.cards-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card */
+.card {
+    width: calc(50% - 20px);
+    max-width: 850px;
+    min-height: 450px;
+    height: auto; /* Allow height to grow dynamically */
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(120deg, #f5e6d3, #e8d6c0);
+    overflow: hidden;
+    cursor: default;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s ease, transform 1s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensures even spacing inside */
+}
+
+.card.revealed {
+    opacity: 1;
+    transform: translateY(0); /* Animate into view */
+}
+
+/* Amplified Glow Effect */
+.glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 120%; /* Amplified size */
+    height: 120%; /* Amplified size */
+    background: radial-gradient(circle, rgba(255, 255, 224, 0.5), rgba(255, 255, 224, 0) 70%);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 3s infinite; /* Slower pulse */
+    z-index: -1; /* Glow behind the card */
+}
+
+/* Animation for the glow */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.card:hover {
+    box-shadow: 0 6px 30px rgba(255, 235, 150, 0.8); /* Brighter glow on hover */
+}
+
+/* Glow intensifies on hover */
+.card:hover .glow {
+    animation: hoverPulse 1.5s infinite; /* Faster pulse on hover */
+    transform: scale(1.2); /* Intensified glow on hover */
+}
+
+@keyframes hoverPulse {
+    0% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+/* Card Heading */
+.card h2 {
+    text-align: center; /* Center align heading */
+    margin-top: 20px; /* Space above the heading */
+    margin-bottom: 15px; /* Space below the heading */
+    font-family: 'Poppins', sans-serif;
+    color: #292929;
+}
+
+/* Card Description */
+.card p {
+    text-align: center; /* Center align text */
+    padding: 0 15px; /* Padding for better text spacing */
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.2em;
+    line-height: 1.6;
+    color: #292929;
+}
+
+/* Icon Style */
+.card-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px; /* Adjust size as needed */
+    margin: 25px 0; /* Space above and below the icon */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .cards-container {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        align-items: center; /* Center align cards */
+    }
+    .card {
+        width: 100%; /* Cards take full width on mobile */
+        height: auto; /* Allow height to adjust based on content */
+        margin: 10px 0; /* Space between cards */
+    }
+}
+

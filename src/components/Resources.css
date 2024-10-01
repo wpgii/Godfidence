@@ -1,0 +1,109 @@
+
+/* General container for resources */
+.resources {
+    width: 90%; /* Stretch the resources section to take up more screen width */
+    max-width: 1200px; /* Set a maximum width */
+    margin: 40px auto; /* Center the section */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px; /* Space between each resource */
+    cursor: default;
+  }
+
+  .resources-container {
+    position: relative;
+    padding-bottom: 40px;
+    overflow: hidden;
+    
+}
+.resources-container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 10px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0) 60%);
+    pointer-events: none;
+  }
+
+  /* Styles for each resource item */
+  .resource-item {
+    display: flex;
+    justify-content: flex-start; /* Align the items */
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+    opacity: 0;
+    transform: translateX(-50px); /* Start the animation off to the left */
+    transition: opacity 0.6s ease, transform 0.6s ease; /* Smooth slide-in animation */
+  }
+  
+  /* Styles for left-aligned icons */
+  .resource-item.left {
+    flex-direction: row; /* Icon on the left */
+  }
+  
+  /* Styles for right-aligned icons */
+  .resource-item.right {
+    flex-direction: row-reverse; /* Icon on the right */
+    transform: translateX(50px); /* Start the animation off to the right */
+  }
+  .resource-item.right .title {
+    text-align: right;
+    padding-left: 35px;
+  }
+
+  .resource-item.right .description {
+    text-align: right;
+    padding-right: 25px;
+  }
+  
+  /* Icon styling */
+  .icon {
+    font-size: 2.5rem; /* Adjust icon size */
+    margin: 0 20px; /* Space between the icon and text */
+    padding: 10px; /* Padding inside the icon area */
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    border-radius: 50%; /* Circular shape for the icon */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for the icon */
+  }
+  
+  /* Title styling */
+  .title {
+    font-size: 1.8rem; /* Make titles slightly bigger */
+    font-weight: bold;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  /* Description styling */
+  .description {
+    font-size: 1.1rem; /* Smaller text for descriptions */
+    line-height: 1.8;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+
+
+  }
+  
+  /* Slide-in animations */
+  .resource-item.show {
+    opacity: 1;
+    transform: translateX(0); /* Bring the items to their original position */
+  }
+  
+  /* Ensure responsiveness on smaller screens */
+  @media (max-width: 768px) {
+    .resource-item {
+      flex-direction: column; /* Stack icon and content vertically */
+      text-align: center;
+    }
+  
+    .icon {
+      margin-bottom: 15px;
+    }
+  }
+  

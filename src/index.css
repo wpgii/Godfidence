@@ -1,0 +1,25 @@
+/* index.css */
+
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif; /* Default font for the entire site' */
+  background-color: rgb(243, 224, 200);; /* Background color for the entire site */
+  color: #333; /* Default text color */
+  line-height: 1.6; /* Improved readability */
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the app takes the full height of the viewport */
+}
+html {
+  scroll-behavior: smooth;
+}
+

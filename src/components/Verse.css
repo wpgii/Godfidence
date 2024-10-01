@@ -1,0 +1,32 @@
+.new-section {
+    background: linear-gradient(to bottom, #d6c9b6, #c2a785); /* Creamy brown tan gradient */
+    padding: 40px 20px; /* Adjust padding for vertical space */
+    text-align: center; /* Center align text */
+    cursor: default;
+}
+
+.new-section h2 {
+    font-size: 1.9em; /* Adjust heading size */
+    margin-bottom: 25px; /* Space below heading */
+    color: #333; /* Text color */
+    font-family: 'Poppins', sans-serif; /* Font family */
+}
+
+.new-section p {
+    font-size: 1.7em; /* Adjust paragraph size */
+    line-height: 1.5; /* Line height for readability */
+    color: #333; /* Text color */
+    margin-bottom: 20px; /* Space below paragraph */
+    font-style: italic; /* Corrected to use font-style for italics */
+}
+@media (max-width: 768px) {
+    .new-section {
+        padding: 20px 10px; /* Reduced padding for smaller screens */
+    }
+    .new-section h2 {
+        font-size: 1.5em; /* Smaller heading size */
+    }
+    .new-section p {
+        font-size: 1.2em; /* Smaller paragraph size */
+    }
+}
