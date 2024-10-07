@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ menuOpen, toggleMenu }) => {
   useEffect(() => {
@@ -40,7 +41,7 @@ const Navbar = ({ menuOpen, toggleMenu }) => {
         <a href="#why-us" className="font-effect-outline">Spirit Spaces</a>
         <a href="#why-us" className="font-effect-outline">Fellowship</a>
         <a href="#resources" className="font-effect-outline">Resources</a>
-        <a href="#login" className="button font-effect-outline">Grow Your Spirit</a>
+        <Link to="/login" className="button font-effect-outline">Grow Your Spirit</Link>
       </div>
       <div className="hamburger-menu" onClick={toggleMenu}>
         {menuOpen ? '✖' : '☰'}
